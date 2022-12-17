@@ -1,6 +1,5 @@
-import { greeting } from "../index.js";
+import { greeting, getRandomNumber } from "../index.js";
 import readlineSync from "readline-sync";
-import { getRandomNumber } from "../index.js";
 
 export const isNumberEven = () => {
   let newUserName = greeting();
