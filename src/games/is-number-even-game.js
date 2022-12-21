@@ -1,4 +1,5 @@
-import { greeting, getRandomNumber } from "../index.js";
+import { greeting } from "../index.js";
+import { getRandomNumber } from "../helper.js";
 import readlineSync from "readline-sync";
 
 export const isNumberEven = () => {
