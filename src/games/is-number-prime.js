@@ -2,10 +2,10 @@ import { greeting } from "../index.js";
 import { getRandomNumber } from "../helper.js";
 import readlineSync from "readline-sync";
 
-export const isNumberEven = () => {
+export const isNumberPrime = () => {
   let newUserName = greeting();
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   let i = 1;
   while (i <= 3) {
@@ -20,11 +20,23 @@ export const isNumberEven = () => {
     let result;
     let feedback;
 
-    if (randomNumber % 2 === 0) {
-      result = "yes";
-    } else {
-      result = "no";
-    }
+    const checkNumberForPrime = (number) => {
+      if (number === 1) {
+        result = "no";
+      } else if (number === 2) {
+        result = "yes";
+      } else {
+        for (let i = 2; i < number; i += 1) {
+          if (number % i === 0) {
+            return (result = "no");
+          }
+        }
+        result = "yes";
+      }
+      return result;
+    };
+
+    checkNumberForPrime(randomNumber);
 
     if (userAnswer === result) {
       feedback = "Correct!";
@@ -34,6 +46,5 @@ export const isNumberEven = () => {
     }
     console.log(feedback);
   }
-
   console.log(`Congratulations, ${newUserName}!`);
 };
