@@ -24,7 +24,7 @@ const getQuestionAndAnswer = () => {
 
   const firstNumber = getRandomNumber(1, 50);
   const secondNumber = getRandomNumber(1, 50);
-  const question = `${firstNumber} ${secondNumber}`;
+  const question = ` ${firstNumber} ${secondNumber}`;
   const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
 
   return [question, correctAnswer];
