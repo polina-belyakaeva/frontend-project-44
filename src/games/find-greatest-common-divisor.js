@@ -30,8 +30,6 @@ const getQuestionAndAnswer = () => {
   const secondNumber = getRandomNumber(1, 50);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
-  
-
   return [question, correctAnswer];
 };
 
