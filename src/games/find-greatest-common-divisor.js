@@ -12,11 +12,9 @@ const checkGreatestCommonDivisor = (first, second) => {
 
   while (first !== second) {
     if (first > second) {
-      first -= second;
-      result = first;
+      result = first - second;
     } else {
-      second -= first;
-      result = second;
+      result = second - first;
     }
   }
 
@@ -26,7 +24,6 @@ const getQuestionAndAnswer = () => {
 
   const firstNumber = getRandomNumber(1, 50);
   const secondNumber = getRandomNumber(1, 50);
-
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
 

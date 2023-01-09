@@ -4,8 +4,8 @@ import readlineSync from 'readline-sync';
 const runGame = (description, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
 
-  let userName = readlineSync.question("May I have your name? ");
-  let newUserName = userName.charAt(0).toUpperCase() + userName.slice(1);
+  const userName = readlineSync.question('May I have your name?');
+  const newUserName = userName.charAt(0).toUpperCase() + userName.slice(1);
   console.log(`Hello, ${newUserName}!`);
 
   console.log(description);
@@ -24,7 +24,7 @@ const runGame = (description, getQuestionAndAnswer) => {
       console.log(`'${newUserAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${newUserName}!`);
       return;
     }
-  };
+  }
   console.log(`Congratulations, ${newUserName}!`);
 };
 
