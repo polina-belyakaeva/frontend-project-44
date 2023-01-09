@@ -1,44 +1,39 @@
-import { greeting } from "../index.js";
-import { getRandomNumber } from "../helper.js";
-import readlineSync from "readline-sync";
+import getRandomNumber from "../helper.js";
+import runGame from "../index.js";
 
-export const checkGreatestCommonDivisor = () => {
-  let newUserName = greeting();
-  console.log("Find the greatest common divisor of given numbers.");
+const description = "Find the greatest common divisor of given numbers.";
 
-  let i = 1;
-  while (i <= 3) {
-    i += 1;
+const checkGreatestCommonDivisor = (first, second) => {
+  let result;
+
+  if (first === second) {
+    result = first;
+  }
+
+  while (first !== second) {
+    if (first > second) {
+      first -= second;
+      result = first;
+    } else {
+      second -= first;
+      result = second;
+    }
+  }
+
+  return String(result);
+};
+
+const getQuestionAndAnswer = () => {
+
     const firstNumber = getRandomNumber(1, 50);
     const secondNumber = getRandomNumber(1, 50);
 
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
-    const userAnswer = readlineSync.question(`Your answer: `);
-    const newUserAnswer = Number(userAnswer);
+    const question= `${firstNumber} ${secondNumber}`;
+    const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
 
-    let result;
-    const findGreatestCommonDivisor = (first, second) => {
-      
-      while (first !== second) {
-        if (first > second) {
-          first -= second;
-          result = first;
-        } else {
-          second -= first;
-          result = second;
-        }
-      }
-      return result;
-    };
+    return [question, correctAnswer];
+};
 
-    findGreatestCommonDivisor(firstNumber, secondNumber);
-
-    if (newUserAnswer === result) {
-      console.log(`Correct!`);
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${newUserName}!`);
-      i = 1;
-    }
-  }
-  console.log(`Congratulations, ${newUserName}!`);
+export default () => {
+  runGame(description, getQuestionAndAnswer);
 };

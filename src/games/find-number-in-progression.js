@@ -1,14 +1,9 @@
-import { greeting } from "../index.js";
-import { getRandomNumber } from "../helper.js";
-import readlineSync from "readline-sync";
+import getRandomNumber from "../helper.js";
+import runGame from "../index.js";
 
-export const findNumberInProgression = () => {
-  let newUserName = greeting();
+const description = 'What number is missing in the progression?'
 
-  console.log("What number is missing in the progression?");
-
-  let i = 1;
-  while (i <= 3) {
+const getQuestionAndAnswer = () => {
     const randomArr = [];
 
     let newNumberInProgression = getRandomNumber(1, 5);
@@ -20,24 +15,15 @@ export const findNumberInProgression = () => {
     }
 
     const randomElement = Math.floor(Math.random() * randomArr.length);
-    const rightAnswer = randomArr[randomElement];
+    const correctAnswer = randomArr[randomElement];
     randomArr[randomElement] = "..";
 
-    i += 1;
+    const question = `${randomArr.toString().split(",").join(" ")}`;
 
-    console.log(`Question: ${randomArr.toString().split(",").join(" ")}`);
-    const userAnswer = readlineSync.question(`Your answer: `);
-
-    let feedback;
-
-    if (userAnswer === rightAnswer) {
-      feedback = "Correct!";
-    } else {
-      feedback = `Answer "${userAnswer}" is wrong answer ;(. Correct answer was ${rightAnswer}.\nLet's try again, ${newUserName}!`;
-      i = 1;
-    }
-    console.log(feedback);
-  }
-
-  console.log(`Congratulations, ${newUserName}!`);
+    return [question, correctAnswer]; 
 };
+
+export default () => {
+  runGame(description, getQuestionAndAnswer);
+};
+

@@ -1,39 +1,17 @@
-import { greeting } from "../index.js";
-import { getRandomNumber } from "../helper.js";
-import readlineSync from "readline-sync";
+import getRandomNumber from "../helper.js";
+import runGame from "../index.js";
 
-export const isNumberEven = () => {
-  let newUserName = greeting();
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const isEvenNumber = (number) => number % 2 === 0;
 
-  let i = 1;
-  while (i <= 3) {
-    const randomNumber = getRandomNumber(1, 50);
+const getQuestionAndAnswer = () => { 
+const question = getRandomNumber(1, 50); 
+const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
-    i += 1;
+return [question, correctAnswer]; 
+};
 
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question(`Your answer: `);
-    userAnswer.toLowerCase();
-
-    let result;
-    let feedback;
-
-    if (randomNumber % 2 === 0) {
-      result = "yes";
-    } else {
-      result = "no";
-    }
-
-    if (userAnswer === result) {
-      feedback = "Correct!";
-    } else {
-      feedback = `Answer "${userAnswer}" is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${newUserName}!`;
-      i = 1;
-    }
-    console.log(feedback);
-  }
-
-  console.log(`Congratulations, ${newUserName}!`);
+export default () => { 
+  runGame(description, getQuestionAndAnswer); 
 };

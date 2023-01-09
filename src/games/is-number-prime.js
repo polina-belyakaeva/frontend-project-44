@@ -1,50 +1,34 @@
-import { greeting } from "../index.js";
-import { getRandomNumber } from "../helper.js";
-import readlineSync from "readline-sync";
+import getRandomNumber from "../helper.js";
+import runGame from "../index.js";
 
-export const isNumberPrime = () => {
-  let newUserName = greeting();
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const isNumberPrime = (number) => {
+  let result;
 
-  let i = 1;
-  while (i <= 3) {
-    const randomNumber = getRandomNumber(1, 50);
-
-    i += 1;
-
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question(`Your answer: `);
-    userAnswer.toLowerCase();
-
-    let result;
-    let feedback;
-
-    const checkNumberForPrime = (number) => {
-      if (number === 1) {
-        result = "no";
-      } else if (number === 2) {
-        result = "yes";
-      } else {
-        for (let i = 2; i < number; i += 1) {
-          if (number % i === 0) {
-            return (result = "no");
-          }
-        }
-        result = "yes";
+  if (number === 1) {
+    result = "no";
+  } else if (number === 2) {
+    result = "yes";
+  } else {
+    for (let i = 2; i < number; i += 1) {
+      if (number % i === 0) {
+        return (result = "no");
       }
-      return result;
-    };
-
-    checkNumberForPrime(randomNumber);
-
-    if (userAnswer === result) {
-      feedback = "Correct!";
-    } else {
-      feedback = `Answer "${userAnswer}" is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${newUserName}!`;
-      i = 1;
     }
-    console.log(feedback);
+    result = "yes";
   }
-  console.log(`Congratulations, ${newUserName}!`);
+  
+  return result;
+};
+
+const getQuestionAndAnswer = () => {
+  const question = getRandomNumber(1, 50);
+  const correctAnswer = isNumberPrime(question);
+
+  return [question, correctAnswer];
+};
+
+export default () => { 
+  runGame(description, getQuestionAndAnswer); 
 };
