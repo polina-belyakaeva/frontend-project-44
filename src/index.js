@@ -11,7 +11,7 @@ const runGame = (description, getQuestionAndAnswer) => {
   console.log(description);
 
   let countRounds = 3;
-  for (let i = 1; i <= countRounds; i += 1) { 
+  for (let i = 0; i < countRounds; i += 1) { 
   const [question, correctAnswer] = getQuestionAndAnswer(); 
   console.log(`Question: ${question}`); 
 
@@ -22,7 +22,7 @@ const runGame = (description, getQuestionAndAnswer) => {
     console.log('Correct!'); 
   } else {
     console.log(`'${newUserAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${newUserName}!`);
-    i = 0;
+    return;
   };
 };
   console.log(`Congratulations, ${newUserName}!`); 

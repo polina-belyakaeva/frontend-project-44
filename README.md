@@ -10,15 +10,15 @@ Brain Games is a set of five console arithmetics games. Each game asks questions
 There are examples of winning (first case) and losing (second case) in the videos below.
 
 • __Brain-even__ - determining an even number.
-[![asciicast](https://asciinema.org/a/fXtVhMfT5F6Yo5s4FPwuGEBpU.svg)](https://asciinema.org/a/fXtVhMfT5F6Yo5s4FPwuGEBpU)
+[![asciicast](https://asciinema.org/a/WcrJjTl4HLukMOsBeo6RXljt4.svg)](https://asciinema.org/a/WcrJjTl4HLukMOsBeo6RXljt4)
 • __Brain-calc__ - arithmetic expressions to be calculated.
-[![asciicast](https://asciinema.org/a/aCLiJQWeVkc2WQnRuyM209gOu.svg)](https://asciinema.org/a/aCLiJQWeVkc2WQnRuyM209gOu)
+[![asciicast](https://asciinema.org/a/bv1YHlEUgYhdM84LBV5dDzTWK.svg)](https://asciinema.org/a/bv1YHlEUgYhdM84LBV5dDzTWK)
 • __Brain-gcd__ - determining the largest common divisor.
-[![asciicast](https://asciinema.org/a/rraICYKUZYdRMEIlVJ5pTgokg.svg)](https://asciinema.org/a/rraICYKUZYdRMEIlVJ5pTgokg)
+[![asciicast](https://asciinema.org/a/6zID3Ox6A29Oru1aMsnLnpVo7.svg)](https://asciinema.org/a/6zID3Ox6A29Oru1aMsnLnpVo7)
 • __Brain-progression__ - finding missing numbers in a sequence of numbers.
-[![asciicast](https://asciinema.org/a/UM2uzABCRfTLM091AESw6piB9.svg)](https://asciinema.org/a/UM2uzABCRfTLM091AESw6piB9)
+[![asciicast](https://asciinema.org/a/odUJHmJGeyOwKw9k9rfuLCT16.svg)](https://asciinema.org/a/odUJHmJGeyOwKw9k9rfuLCT16)
 • __Brain-prime__ - determining a prime number.
-[![asciicast](https://asciinema.org/a/w6ZGuy8r63Ai3mZc2vNcHmC2a.svg)](https://asciinema.org/a/w6ZGuy8r63Ai3mZc2vNcHmC2a)
+[![asciicast](https://asciinema.org/a/yRDHtzpRmrH7g9QkPvdhY6ZfU.svg)](https://asciinema.org/a/yRDHtzpRmrH7g9QkPvdhY6ZfU)
 
 #Installation
 ___
