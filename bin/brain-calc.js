@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calculateMathExpression from "../src/games/calculate-math-expression.js";
+import calculateMathExpression from '../src/games/calculate-math-expression.js';
 
 calculateMathExpression();

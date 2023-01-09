@@ -1,7 +1,7 @@
-import getRandomNumber from "../helper.js";
-import runGame from "../index.js";
+import getRandomNumber from '../helper.js';
+import runGame from '../index.js';
 
-const description = "Find the greatest common divisor of given numbers.";
+const description = 'Find the greatest common divisor of given numbers.';
 
 const checkGreatestCommonDivisor = (first, second) => {
   let result;
@@ -22,16 +22,15 @@ const checkGreatestCommonDivisor = (first, second) => {
 
   return String(result);
 };
-
 const getQuestionAndAnswer = () => {
 
-    const firstNumber = getRandomNumber(1, 50);
-    const secondNumber = getRandomNumber(1, 50);
+  const firstNumber = getRandomNumber(1, 50);
+  const secondNumber = getRandomNumber(1, 50);
 
-    const question= `${firstNumber} ${secondNumber}`;
-    const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
+  const question = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = checkGreatestCommonDivisor(firstNumber, secondNumber);
 
-    return [question, correctAnswer];
+  return [question, correctAnswer];
 };
 
 export default () => {

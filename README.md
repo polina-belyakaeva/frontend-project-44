@@ -11,12 +11,16 @@ There are examples of winning (first case) and losing (second case) in the video
 
 • __Brain-even__ - determining an even number.
 [![asciicast](https://asciinema.org/a/WcrJjTl4HLukMOsBeo6RXljt4.svg)](https://asciinema.org/a/WcrJjTl4HLukMOsBeo6RXljt4)
+
 • __Brain-calc__ - arithmetic expressions to be calculated.
 [![asciicast](https://asciinema.org/a/bv1YHlEUgYhdM84LBV5dDzTWK.svg)](https://asciinema.org/a/bv1YHlEUgYhdM84LBV5dDzTWK)
+
 • __Brain-gcd__ - determining the largest common divisor.
 [![asciicast](https://asciinema.org/a/6zID3Ox6A29Oru1aMsnLnpVo7.svg)](https://asciinema.org/a/6zID3Ox6A29Oru1aMsnLnpVo7)
+
 • __Brain-progression__ - finding missing numbers in a sequence of numbers.
 [![asciicast](https://asciinema.org/a/odUJHmJGeyOwKw9k9rfuLCT16.svg)](https://asciinema.org/a/odUJHmJGeyOwKw9k9rfuLCT16)
+
 • __Brain-prime__ - determining a prime number.
 [![asciicast](https://asciinema.org/a/yRDHtzpRmrH7g9QkPvdhY6ZfU.svg)](https://asciinema.org/a/yRDHtzpRmrH7g9QkPvdhY6ZfU)
 

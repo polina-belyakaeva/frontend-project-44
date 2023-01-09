@@ -1,16 +1,16 @@
-import getRandomNumber from "../helper.js";
-import runGame from "../index.js";
+import getRandomNumber from '../helper.js';
+import runGame from '../index.js';
 
 const description = 'What is the result of the expression?';
 
 const calculateMathExpression = (firstNumber, secondNumber, operator) => {
   let result;
 
-  if (operator === "+") {
+  if (operator === '+') {
     result = firstNumber + secondNumber;
-  } else if (operator === "-") {
+  } else if (operator === '-') {
     result = firstNumber - secondNumber;
-  } else if (operator === "*") {
+  } else if (operator === '*') {
     result = firstNumber * secondNumber;
   }
 
@@ -18,12 +18,12 @@ const calculateMathExpression = (firstNumber, secondNumber, operator) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const operators = ["+", "-", "*"];
+  const operators = ['+', '-', '*'];
   const operatorSelector = Math.floor(Math.random() * operators.length);
   const operator = operators[operatorSelector];
 
-  let firstNumber = getRandomNumber(1, 6);
-  let secondNumber = getRandomNumber(1, 10);
+  const firstNumber = getRandomNumber(1, 6);
+  const secondNumber = getRandomNumber(1, 10);
 
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const correctAnswer = calculateMathExpression(firstNumber, secondNumber, operator);
