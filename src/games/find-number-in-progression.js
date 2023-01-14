@@ -3,22 +3,23 @@ import runGame from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
-const getQuestionAndAnswer = () => {
-  const randomArr = [];
-
-  let newNumberInProgression = getRandomNumber(1, 5);
-  const progressionStep = getRandomNumber(2, 5);
-
-  while (randomArr.length <= 9) {
-    randomArr.push(newNumberInProgression.toString());
-    newNumberInProgression += progressionStep;
+const getProgression = (step, startNumber, lengthProgression) => {
+  const randomProgression = [];
+  while (randomProgression.length <= lengthProgression) {
+    randomProgression.push(startNumber.toString());
+    startNumber += step;
   }
+  return randomProgression;
+};
 
-  const randomElement = Math.floor(Math.random() * randomArr.length);
-  const correctAnswer = randomArr[randomElement];
-  randomArr[randomElement] = '..';
+const getQuestionAndAnswer = () => {
+  const progression = getProgression(getRandomNumber(2, 10), getRandomNumber(3, 9), 9);
+  const randomElement = Math.floor(Math.random() * progression.length);
+  
+  const correctAnswer = progression[randomElement];
+  progression[randomElement] = '..';
 
-  const question = `${randomArr.toString().split(',').join(' ')}`;
+  const question = progression.join(' ');
 
   return [question, correctAnswer];
 };
