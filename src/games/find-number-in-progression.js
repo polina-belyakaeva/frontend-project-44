@@ -7,7 +7,8 @@ const getProgression = (step, startNumber, lengthProgression) => {
   const randomProgression = [];
   while (randomProgression.length <= lengthProgression) {
     randomProgression.push(startNumber.toString());
-    startNumber += step;
+    const newNumber = startNumber;
+    newNumber += step;
   }
   return randomProgression;
 };
@@ -15,7 +16,6 @@ const getProgression = (step, startNumber, lengthProgression) => {
 const getQuestionAndAnswer = () => {
   const progression = getProgression(getRandomNumber(2, 10), getRandomNumber(3, 9), 9);
   const randomElement = Math.floor(Math.random() * progression.length);
-  
   const correctAnswer = progression[randomElement];
   progression[randomElement] = '..';
 
