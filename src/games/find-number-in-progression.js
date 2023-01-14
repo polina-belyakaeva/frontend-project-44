@@ -5,9 +5,9 @@ const description = 'What number is missing in the progression?';
 
 const getProgression = (step, startNumber, lengthProgression) => {
   const randomProgression = [];
+  let newNumber = startNumber;
   while (randomProgression.length <= lengthProgression) {
-    randomProgression.push(startNumber.toString());
-    const newNumber = startNumber;
+    randomProgression.push(newNumber.toString());
     newNumber += step;
   }
   return randomProgression;
