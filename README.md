@@ -37,6 +37,6 @@ __To install the Brain-games:__
 1. Clone the repository git clone git@github.com:polina-belyakaeva/frontend-project-44.git
 2. Go to repository directory cd frontend-project-44
 3. Install dependencies make install
-4. Install the package make link
+4. Install the package npm link
 
  :space_invader: Enjoy the game!
